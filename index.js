@@ -1,5 +1,10 @@
 var nano = require('nano')
 
+var existResponse = {
+  ok: true,
+  existing: true
+}
+
 module.exports = function configure(url, callback) {
   var db = nano(url)
   var couch = nano(db.config.url)
@@ -8,9 +13,14 @@ module.exports = function configure(url, callback) {
     method: 'HEAD',
     db: db.config.db
   }, function(error) {
-    if (!error) return callback(null, { ok: true, existing: true })
+    if (!error) return callback(null, existResponse)
     if (error.statusCode !== 404) return callback(error)
 
-    couch.db.create(db.config.db, callback)
+    couch.db.create(db.config.db, function(error, response) {
+      if (!error) return callback(null, response)
+      if (error.statusCode === 412) return callback(null, existResponse)
+
+      callback(error)
+    })
   })
 }
