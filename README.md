@@ -1,0 +1,25 @@
+# CouchDB Ensure
+Create database unless it exists.
+
+[![Build
+Status](https://travis-ci.org/eHealthAfrica/couchdb-ensure.svg?branch=master)](https://travis-ci.org/eHealthAfrica/couchdb-ensure)
+
+## API
+
+```js
+var ensure = require('couchdb-ensure')
+ensure('http://localhost:5984/mydb', function(error, response) {
+  // here we go
+})
+```
+
+## CLI
+
+```sh
+couchdb-ensure http://localhost:5984/mydb
+```
+
+## Tests
+```sh
+npm test
+```
