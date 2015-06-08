@@ -9,7 +9,7 @@ Status](https://travis-ci.org/eHealthAfrica/couchdb-ensure.svg?branch=master)](h
 ```js
 var ensure = require('couchdb-ensure')
 ensure('http://localhost:5984/mydb', function(error, response) {
-  // here we go
+  // here we go, mydb exists
 })
 ```
 
