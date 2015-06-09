@@ -7,6 +7,12 @@ Status](https://travis-ci.org/eHealthAfrica/couchdb-ensure.svg?branch=master)](h
 ## API
 
 ```js
+ensure(url[, options], callback)
+```
+
+### Example
+
+```js
 var ensure = require('couchdb-ensure')
 ensure('http://localhost:5984/mydb', function(error, response) {
   // here we go, mydb exists
@@ -14,6 +20,12 @@ ensure('http://localhost:5984/mydb', function(error, response) {
 ```
 
 ## CLI
+
+```sh
+couchdb-ensure URL
+```
+
+### Example
 
 ```sh
 couchdb-ensure http://localhost:5984/mydb

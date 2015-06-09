@@ -3,7 +3,12 @@
 var configure = require('./')
 
 
-var url = process.argv[2]
+var args = process.argv.slice(2);
+if (!args.length) {
+  return console.log('Usage: \ncouchdb-ensure URL')
+}
+
+var url = args[0];
 
 
 configure(url, function(error, response) {
