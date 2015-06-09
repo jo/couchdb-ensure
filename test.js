@@ -1,7 +1,7 @@
 var test = require('tape')
 var nano = require('nano')
 
-var secure = require('./')
+var ensure = require('./')
 
 
 var url = process.env.COUCH || 'http://localhost:5984'
@@ -12,7 +12,7 @@ var db = couch.use(dbname)
 
 test('database did not exist', function(t) {
   couch.db.destroy(dbname, function() {
-    secure(url + '/' + dbname, function(error, response) {
+    ensure(url + '/' + dbname, function(error, response) {
       t.notOk(error, 'no error occured')
       t.ok(response.ok, 'response is ok')
       t.end()
@@ -22,11 +22,19 @@ test('database did not exist', function(t) {
 
 test('database did exist', function(t) {
   couch.db.create(dbname, function() {
-    secure(url + '/' + dbname, function(error, response) {
+    ensure(url + '/' + dbname, function(error, response) {
       t.notOk(error, 'no error occured')
       t.ok(response.ok, 'response is ok')
       t.ok(response.existing, 'existing is set')
       t.end()
     })
+  })
+})
+
+test('url is nano object', function(t) {
+  ensure(db, function(error, response) {
+    t.notOk(error, 'no error occured')
+    t.ok(response.ok, 'response is ok')
+    t.end()
   })
 })
