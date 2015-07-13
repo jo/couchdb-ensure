@@ -1,4 +1,4 @@
-var nano = require('nano')
+var nanoOption = require('nano-option')
 
 var existResponse = {
   ok: true,
@@ -6,8 +6,8 @@ var existResponse = {
 }
 
 module.exports = function configure(url, callback) {
-  var db = typeof url.config === 'object' ? url : nano(url)
-  var couch = nano(db.config.url)
+  var db = nanoOption(url)
+  var couch = nanoOption(db.config.url)
 
   couch.request({
     method: 'HEAD',
