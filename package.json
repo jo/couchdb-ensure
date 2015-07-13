@@ -1,6 +1,6 @@
 {
   "name": "couchdb-ensure",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Create database unless it exists.",
   "main": "index.js",
   "bin": "cli.js",
