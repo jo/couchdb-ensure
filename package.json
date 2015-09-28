@@ -1,15 +1,15 @@
 {
   "name": "couchdb-ensure",
-  "version": "1.2.1",
   "description": "Create database unless it exists.",
   "main": "index.js",
   "bin": "cli.js",
   "scripts": {
-    "test": "tape test.js | tap-spec"
+    "test": "tape test.js | tap-spec",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eHealthAfrica/couchdb-ensure.git"
+    "url": "https://github.com/eHealthAfrica/couchdb-ensure.git"
   },
   "keywords": [
     "couchdb",
@@ -27,6 +27,7 @@
   "devDependencies": {
     "nano": "^6.1.3",
     "tap-spec": "^4.0.0",
-    "tape": "^4.0.0"
+    "tape": "^4.0.0",
+    "semantic-release": "^4.3.5"
   }
 }
