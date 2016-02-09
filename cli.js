@@ -2,16 +2,15 @@
 
 var configure = require('./')
 
-
-var args = process.argv.slice(2);
+var args = process.argv.slice(2)
 if (!args.length) {
-  return console.log('Usage: \ncouchdb-ensure URL')
+  console.log('Usage: \ncouchdb-ensure URL')
+  process.exit()
 }
 
-var url = args[0];
+var url = args[0]
 
-
-configure(url, function(error, response) {
+configure(url, function (error, response) {
   if (error) return console.error(error)
 
   console.log(JSON.stringify(response, null, '  '))
