@@ -2,7 +2,7 @@
 Create database unless it exists.
 
 [![Build
-Status](https://travis-ci.org/eHealthAfrica/couchdb-ensure.svg?branch=master)](https://travis-ci.org/eHealthAfrica/couchdb-ensure)
+Status](https://travis-ci.org/jo/couchdb-ensure.svg?branch=master)](https://travis-ci.org/jo/couchdb-ensure)
 
 ## API
 
