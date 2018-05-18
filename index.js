@@ -7,7 +7,7 @@ var existResponse = {
 
 module.exports = function configure (url, callback) {
   var db = nanoOption(url)
-  var couch = nanoOption(db.config.url)
+  var couch = nanoOption({url: db.config.url, parseUrl: false})
 
   couch.request({
     method: 'HEAD',
