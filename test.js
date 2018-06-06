@@ -36,3 +36,11 @@ test('url is nano object', function (t) {
     t.end()
   })
 })
+
+test('does not throw for server at subpath', function (t) {
+  t.doesNotThrow(function () {
+    ensure('http://example.com/couchdb/database', function () {
+      t.end()
+    })
+  }, 'did throw an exception')
+})
