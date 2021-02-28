@@ -1,12 +1,12 @@
-var test = require('tap').test
-var nano = require('nano')
+const test = require('tap').test
+const nano = require('nano')
 
-var ensure = require('./')
+const ensure = require('./')
 
-var url = process.env.COUCH || 'http://localhost:5984'
-var dbname = 'couchdb-ensure-test'
-var couch = nano(url)
-var db = couch.use(dbname)
+const url = process.env.COUCH || 'http://localhost:5984'
+const dbname = 'couchdb-ensure-test'
+const couch = nano(url)
+const db = couch.use(dbname)
 
 test('database did not exist', function (t) {
   couch.db.destroy(dbname, function () {

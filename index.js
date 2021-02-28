@@ -1,13 +1,13 @@
-var nanoOption = require('nano-option')
+const nanoOption = require('nano-option')
 
-var existResponse = {
+const existResponse = {
   ok: true,
   existing: true
 }
 
 module.exports = function configure (url, callback) {
-  var db = nanoOption(url)
-  var couch = nanoOption({url: db.config.url, parseUrl: false})
+  const db = nanoOption(url)
+  const couch = nanoOption({ url: db.config.url, parseUrl: false })
 
   couch.request({
     method: 'HEAD',
