@@ -1,6 +1,5 @@
 {
   "name": "couchdb-ensure",
-  "version": "0.0.0-development",
   "description": "Create database unless it exists.",
   "main": "index.js",
   "bin": "cli.js",
@@ -29,9 +28,14 @@
   },
   "devDependencies": {
     "nano": "^6.4.3",
-    "semantic-release": "^12.4.1",
+    "semantic-release": "^17.4.0",
     "standard": "^11.0.0",
-    "tap": "^11.1.1",
-    "travis-deploy-once": "^4.3.4"
+    "tap": "^11.1.1"
+  },
+  "version": "0.0.0-development",
+  "release": {
+    "branches": [
+      "main"
+    ]
   }
 }
